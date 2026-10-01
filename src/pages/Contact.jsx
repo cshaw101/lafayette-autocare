@@ -1,5 +1,7 @@
 import { useState } from "react"
 import { services } from "../data/services"
+import { TextInput, Select, Textarea } from "@mantine/core"
+import Button from "../components/Button"
 
 
 
@@ -33,24 +35,21 @@ const [submitted, setSubmitted] = useState(false)
     }}>
   <h2>Contact Lafayette AutoCare</h2>
 
-  <label>Name</label>
-
-  <input
-    type="text"
-    required
-    value={formData.name}
-    onChange={(e) => {
-      setFormData({
-        ...formData,
-        name: e.target.value
-      })
-    }}
-  />
+<TextInput
+  label="Name"
+  value={formData.name}
+  onChange={(e) => {
+    setFormData({
+      ...formData,
+      name: e.target.value
+    })
+  }}
+/>
 
 
-  <label>Email</label>
-  <input 
-  type="email"
+ 
+  <TextInput
+  label="Email"
   required
   value={formData.email}
   onChange={(e) => {
@@ -61,9 +60,8 @@ const [submitted, setSubmitted] = useState(false)
   }}
   />
 
-  <label>Phone Number</label>
-  <input
-  type='tel'
+<TextInput
+  label="Phone Number"
   value={formData.phone}
   onChange={(e) => {
     setFormData({
@@ -71,38 +69,34 @@ const [submitted, setSubmitted] = useState(false)
       phone: e.target.value
     })
   }}
-
-
 />
 
-<label>Service</label>
-<select value={formData.service}
+<Select
+  label="Service"
   required
-onChange={(e) => {
+  value={formData.service}
+  onChange={(value) => {
     setFormData({
       ...formData,
-      service: e.target.value
+      service: value
     })
   }}
+  data={services.map((service) => ({
+    value: service.name,
+    label: service.name
+  }))}
+/>
 
->
-  
-{services.map((service) => {
-  return (
-    <option key={service.name} value={service.name}>{service.name}</option>
-  )
-})}
-</select>
-
-<label>Contact Us</label>
-<textarea value={formData.message}
+<Textarea
+  label="Message"
   required
- onChange={(e) => {
-  setFormData({
-   ...formData,
-    message: e.target.value
+  value={formData.message}
+  onChange={(e) => {
+    setFormData({
+      ...formData,
+      message: e.target.value
     })
-}} 
+  }}
 />
 {submitted && (
   <p>
@@ -112,7 +106,9 @@ onChange={(e) => {
 
 
 
-<button type="submit">Submit</button>
+<Button type="submit">
+  Submit
+</Button>
 </form>
   )
 }

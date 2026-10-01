@@ -3,7 +3,7 @@
    import { services } from "../data/services";
     import SectionTitle from "../components/SectionTitle";
     import Button from "../components/Button";
-    import { Stack } from "@mantine/core"
+    import { SimpleGrid, Stack } from "@mantine/core"
 
     function Home() {
         const navigate = useNavigate();
@@ -19,12 +19,19 @@
         }}>Contact Us!</Button>
 
     <h2>Our Services</h2>
-    {services.map((service) => {
-        return (
-        <ServiceCard key={service.name} name={service.name} description={service.description} />
-        )
-    })}
+ <SimpleGrid cols={2}>
 
+  {services.map((service) => {
+    return (
+      <ServiceCard 
+        key={service.name}
+        name={service.name}
+        description={service.description}
+      />
+    )
+  })}
+
+</SimpleGrid>
 
     <section>
    <SectionTitle title="Why Customers Choose Us" />
