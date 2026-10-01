@@ -3,11 +3,12 @@
    import { services } from "../data/services";
     import SectionTitle from "../components/SectionTitle";
     import Button from "../components/Button";
+    import { Stack } from "@mantine/core"
 
     function Home() {
         const navigate = useNavigate();
     return (
-    <div>
+        <Stack>
 
         <SectionTitle title="Why Choose Lafayette AutoCare?" />
         <p>this is a description of the shop. pretend you are very 
@@ -26,7 +27,7 @@
 
 
     <section>
-        <SectionTitle title="Why Choose Lafayette AutoCare?" />
+   <SectionTitle title="Why Customers Choose Us" />
         <div>
             <h3>
                 honest pricing
@@ -67,8 +68,7 @@
             navigate('/contact')
         }}>Contact Us!</Button>
     </section>
-
-    </div>
+    </Stack>
     )
     }
 
