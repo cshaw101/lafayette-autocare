@@ -1,6 +1,6 @@
     import { useNavigate } from "react-router-dom"
     import ServiceCard from "../components/ServiceCard";
-    import { services } from "./Services";
+   import { services } from "../data/services";
     import SectionTitle from "../components/SectionTitle";
     import Button from "../components/Button";
 

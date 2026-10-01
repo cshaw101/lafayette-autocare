@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { services } from "./Services"
+import { services } from "../data/services"
 
 
 

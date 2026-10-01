@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom"
-import { services } from "./Services"
+import { services } from "../data/services"
 
 
 function ServiceDetails() {
