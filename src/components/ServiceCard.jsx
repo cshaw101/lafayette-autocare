@@ -1,15 +1,23 @@
-import { Link } from "react-router-dom"
+
+import { Card, Text, Title } from "@mantine/core"
 
 function ServiceCard({ name, description }) {
-    
 
-return (
-    <div>
-        <h2>{name}</h2>
-        <p>{description}</p>
-        <Link to={`/services/${name.toLowerCase().replace(" ", "-")}`}>View Service</Link>
-    </div>
-)
+  return (
+
+    <Card shadow="sm" padding="lg" radius="md" withBorder>
+
+      <Title order={3}>
+        {name}
+      </Title>
+
+      <Text>
+        {description}
+      </Text>
+
+    </Card>
+
+  )
 
 }
 

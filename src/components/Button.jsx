@@ -1,4 +1,4 @@
-
+import { Button as MantineButton } from "@mantine/core"
 
 
 
@@ -6,9 +6,9 @@ function Button({ children, onClick }) {
 
   return (
 
-    <button onClick={onClick}>
+    <MantineButton onClick={onClick}>
       {children}
-    </button>
+    </MantineButton>
 
   )
 
