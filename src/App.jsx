@@ -3,15 +3,15 @@ import Home from "./pages/Home"
 import Services from "./pages/Services"
 import About from "./pages/About"
 import Contact from "./pages/Contact"
-import Navbar from "./components/Navbar"
 import ServiceDetails from "./pages/ServiceDetails"
 import './App.css'
+import Layout from "./components/Layout"
 
 function App() {
 
   return (
     <BrowserRouter>
-    <Navbar />
+    <Layout>
     
     <Routes>
     <Route path="/" element={<Home />} />
@@ -22,7 +22,7 @@ function App() {
 
     </Routes>
     
-    
+    </Layout>
     </BrowserRouter>
   
      
