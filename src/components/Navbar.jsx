@@ -1,25 +1,40 @@
-import { NavLink } from "react-router-dom"
+import { Link } from "react-router-dom"
+import { AppBar, Toolbar, Typography, Button } from "@mui/material"
 
 function Navbar() {
-    return (
-        <nav>
-            <NavLink to="/" end className={({ isActive }) => isActive ? "active" : ""}>
-  Home
-</NavLink>
 
-<NavLink to="/services" className={({ isActive }) => isActive ? "active" : ""}>
-  Services
-</NavLink>
+  return (
 
-<NavLink to="/about" className={({ isActive }) => isActive ? "active" : ""}>
-  About
-</NavLink>
+    <AppBar position="static">
 
-<NavLink to="/contact" className={({ isActive }) => isActive ? "active" : ""}>
-  Contact
-</NavLink>
-        </nav>
-    )
+      <Toolbar>
+
+        <Typography variant="h6" sx={{ flexGrow: 1 }}>
+          Lafayette AutoCare
+        </Typography>
+
+        <Button color="inherit" component={Link} to="/">
+          Home
+        </Button>
+
+        <Button color="inherit" component={Link} to="/services">
+          Services
+        </Button>
+
+        <Button color="inherit" component={Link} to="/about">
+          About
+        </Button>
+
+        <Button color="inherit" component={Link} to="/contact">
+          Contact
+        </Button>
+
+      </Toolbar>
+
+    </AppBar>
+
+  )
+
 }
 
 export default Navbar
