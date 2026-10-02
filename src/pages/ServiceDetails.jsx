@@ -40,9 +40,9 @@ function ServiceDetails() {
         {service.description}
       </Typography>
 
-      <Button onClick={() => navigate("/contact")}>
+      <Button type='submit' onClick={() => navigate("/contact")}>
         Request This Service
-      </Button>
+     </Button>
       </Card>
     </Box>
   )
